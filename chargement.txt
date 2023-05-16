@@ -1,4 +1,6 @@
 D'après le diagramme,
 le programme crée un object chargeur de magasin à partir du main.
 Ce chargeur crée un magasin puis un chargeur de CD dans la création du magasin.
-Il ajoute un céder à partir de la methode ajouterCd de Magasin.
+Avec la methode chargerCD de la classe chagCD puis charge CD créer un CD à partir du constructeur de la classe CD.
+Il extrait la piste et l'ajoute à CD avec la méthode ajouterPiste de la classe CD. Il effectue cette action 2 fois.
+Il ajoute un CD à partir de la methode ajouterCd de Magasin.

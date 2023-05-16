@@ -69,11 +69,24 @@ public class Magasin {
 	}
 
 	public void trierAriste() {
-		throw new Error("TODO");
+		for(int i = 0 ; i < listeCds.size() ; i++){
+			for(int j = 0 ; j < listeCds.size() ; j++){
+				if(listeCds.get(i).compareTo(listeCds.get(j)) < 0){
+					CD temp = listeCds.get(i);
+					listeCds.set(i, listeCds.get(j));
+					listeCds.set(j, temp);
+				}
+			}
+		}
+
 	}
 
 	public void trierAlbum() {
-		throw new Error("TODO");
+		//tri par selection
+
+		ArrayList<CD> lis = new ArrayList<CD>();
+
+
 	}
 
 	public int getTaille() {

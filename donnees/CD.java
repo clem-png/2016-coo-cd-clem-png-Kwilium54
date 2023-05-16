@@ -97,5 +97,11 @@ public class CD {
 		return (resultat);
 	}
 
-	// TODO 
+	public String getNomArtiste() {
+		return nomArtiste;
+	}
+
+	public int compareTo(CD cd) {
+		return this.nomArtiste.compareTo(cd.nomArtiste);
+	}
 }

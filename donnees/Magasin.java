@@ -84,10 +84,23 @@ public class Magasin {
 	public void trierAlbum() {
 		//tri par selection
 
-		ArrayList<CD> lis = new ArrayList<CD>();
+			int n = listeCds.size();
+			for (int i = 0; i < n - 1; i++) {
+				int minIndex = i;
+				for (int j = i + 1; j < n; j++) {
+					if (listeCds.get(j).compareTo(listeCds.get(minIndex)) < 0) {
+						minIndex = j;
+					}
+				}
+				if (minIndex != i) {
+					CD temp = listeCds.get(i);
+					listeCds.set(i, listeCds.get(minIndex));
+					listeCds.set(minIndex, temp);
+				}
+			}
+		}
 
 
-	}
 
 	public int getTaille() {
 		return listeCds.size();

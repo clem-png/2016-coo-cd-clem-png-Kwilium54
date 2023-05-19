@@ -20,21 +20,35 @@ public class MainChargeurMagasin {
 	 *             en cas de probleme de lecture entree/sortie
 	 */
 	public static void main(String args[]) throws IOException {
+
+		///magasinCD_donnees/
 		
-		String repertoire = "../magasinCD_donnees/musicbrainzSimple/";
+		String repertoire = "musicbrainzSimple/";
 		ChargeurMagasin charge = new ChargeurMagasin(repertoire);
 		Magasin resultat = charge.chargerMagasin();
 		System.out.println(resultat);
 
-		Scanner sc = new Scanner(System.in);
-		sc.nextLine();
-		sc.close();
+		System.out.println("\n \t trierArtiste \n");
+
 
 		resultat.trierAriste();
 		System.out.println(resultat);
 
+		System.out.println("\n \t trierAlbum \n");
+
 		resultat.trierAlbum();
 		System.out.println(resultat);
+
+		/*
+		Scanner sc = new Scanner(System.in);
+		sc.nextLine();
+		sc.close();
+
+		 */
+
+
+
+
 
 	}
 

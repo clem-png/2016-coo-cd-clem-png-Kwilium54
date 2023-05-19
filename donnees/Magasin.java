@@ -83,21 +83,33 @@ public class Magasin {
 
 	public void trierAlbum() {
 		//tri par selection
-
+		//j'ai mit x et y pour changer des i et j
+		//
+			//je prends la taille de la liste, le nombre de CD
 			int n = listeCds.size();
-			for (int i = 0; i < n - 1; i++) {
-				int minIndex = i;
-				for (int j = i + 1; j < n; j++) {
-					if (listeCds.get(j).compareTo(listeCds.get(minIndex)) < 0) {
-						minIndex = j;
+
+			for(int x = 0; x< (n-1); x++) {
+
+				int minI = x;
+
+				for(int y = x + 1; y < n; y++) {
+					//la méthode de comparaison compareTo renvoie un int
+					if(listeCds.get(y).compareTo(listeCds.get(minI)) < 0) {
+						minI = y;
 					}
+
 				}
-				if (minIndex != i) {
-					CD temp = listeCds.get(i);
-					listeCds.set(i, listeCds.get(minIndex));
-					listeCds.set(minIndex, temp);
+
+				if(minI != x) {
+
+					CD t = listeCds.get(x);
+					listeCds.set(x, listeCds.get(minI));
+					listeCds.set(minI, t);
+
 				}
+
 			}
+
 		}
 
 

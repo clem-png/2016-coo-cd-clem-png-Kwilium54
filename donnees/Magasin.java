@@ -89,6 +89,29 @@ public class Magasin {
 			}
 		}
 
+		/*
+		public ArrayList<CD> chercherArtiste(String nom) {
+			ArrayList<CD> resultat = new ArrayList<CD>();
+			for (CD cd : listeCds) {
+				if (cd.getArtiste().equals(nom)) {
+					resultat.add(cd);
+				}
+			}
+			return resultat;
+		}
+
+
+		 */
+
+	public ArrayList<CD> chercher(Selecteur selecteur) {
+		ArrayList<CD> resultat = new ArrayList<CD>();
+		for (CD cd : listeCds) {
+			if (selecteur.garderCd(cd)) {
+				resultat.add(cd);
+			}
+		}
+		return resultat;
+	}
 
 
 	public int getTaille() {

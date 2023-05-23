@@ -113,4 +113,8 @@ public class CD {
 	public String getAlbum() {
 		return this.nomCD;
 	}
+
+	public int getNbPiste() {
+		return this.pistes.size();
+	}
 }

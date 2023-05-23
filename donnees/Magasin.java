@@ -68,72 +68,25 @@ public class Magasin {
 		return(res);
 	}
 
-	public void trierAriste() {
-		for(int i = 0 ; i < listeCds.size() ; i++){
-			for(int j = 0 ; j < listeCds.size() ; j++){
 
-				//modifier pour que ça utilise etreAvantArtiste
-				if(listeCds.get(i).compareTo(listeCds.get(j)) < 0){
-					CD temp = listeCds.get(i);
-					listeCds.set(i, listeCds.get(j));
-					listeCds.set(j, temp);
-				}
-			}
-		}
 
-	}
+		public void trier(ComparateurCD comp) {
+			int nbCDs = this.listeCds.size();
+			for (int i = 0; i < nbCDs; i++) {
+				CD cdSelectionne = this.listeCds.get(i);
 
-	public void trierAlbum() {
-
-		/*
-		//tri par selection
-		//j'ai mit x et y pour changer des i et j
-		//
-			//je prends la taille de la liste, le nombre de CD
-			int n = listeCds.size();
-
-			for(int x = 0; x< (n-1); x++) {
-
-				int minI = x;
-
-				for(int y = x + 1; y < n; y++) {
-					//la méthode de comparaison compareTo renvoie un int
-					if(listeCds.get(y).compareTo(listeCds.get(minI)) < 0) {
-						minI = y;
+				//selectionne plus petit
+				int indiceSelection = i;
+				for (int j = i + 1; j < nbCDs; j++) {
+					CD cdTemp = listeCds.get(j);
+					if (comp.etreAvant(cdTemp, cdSelectionne)) {
+						indiceSelection = j;
+						cdSelectionne = cdTemp;
 					}
-
 				}
-
-				if(minI != x) {
-
-					CD t = listeCds.get(x);
-					listeCds.set(x, listeCds.get(minI));
-					listeCds.set(minI, t);
-
-				}
-
+				listeCds.set(indiceSelection, listeCds.get(i));
+				listeCds.set(i, cdSelectionne);
 			}
-
-		 */
-
-		// tri par selection
-		int nbCDs = this.listeCds.size();
-		for (int i = 0; i < nbCDs; i++) {
-			CD cdSelectionne = this.listeCds.get(i);
-
-			//selectionne plus petit
-			int indiceSelection = i;
-			for (int j = i + 1; j < nbCDs; j++) {
-				CD cdTemp = listeCds.get(j);
-				if (cdTemp.etreAvantAlbum(cdSelectionne)) {
-					indiceSelection = j;
-					cdSelectionne = cdTemp;
-				}
-			}
-			listeCds.set(indiceSelection, listeCds.get(i));
-			listeCds.set(i, cdSelectionne);
-		}
-
 		}
 
 

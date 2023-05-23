@@ -31,12 +31,12 @@ public class MainChargeurMagasin {
 		System.out.println("\n \t trierArtiste \n");
 
 
-		resultat.trierAriste();
+		//resultat.trierAriste();
 		System.out.println(resultat);
 
 		System.out.println("\n \t trierAlbum \n");
 
-		resultat.trierAlbum();
+		//resultat.trierAlbum();
 		System.out.println(resultat);
 
 		/*

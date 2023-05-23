@@ -71,6 +71,8 @@ public class Magasin {
 	public void trierAriste() {
 		for(int i = 0 ; i < listeCds.size() ; i++){
 			for(int j = 0 ; j < listeCds.size() ; j++){
+
+				//modifier pour que ça utilise etreAvantArtiste
 				if(listeCds.get(i).compareTo(listeCds.get(j)) < 0){
 					CD temp = listeCds.get(i);
 					listeCds.set(i, listeCds.get(j));
@@ -82,6 +84,8 @@ public class Magasin {
 	}
 
 	public void trierAlbum() {
+
+		/*
 		//tri par selection
 		//j'ai mit x et y pour changer des i et j
 		//
@@ -110,14 +114,41 @@ public class Magasin {
 
 			}
 
+		 */
+
+		// tri par selection
+		int nbCDs = this.listeCds.size();
+		for (int i = 0; i < nbCDs; i++) {
+			CD cdSelectionne = this.listeCds.get(i);
+
+			//selectionne plus petit
+			int indiceSelection = i;
+			for (int j = i + 1; j < nbCDs; j++) {
+				CD cdTemp = listeCds.get(j);
+				if (cdTemp.etreAvantAlbum(cdSelectionne)) {
+					indiceSelection = j;
+					cdSelectionne = cdTemp;
+				}
+			}
+			listeCds.set(indiceSelection, listeCds.get(i));
+			listeCds.set(i, cdSelectionne);
+		}
+
 		}
 
 
 
 	public int getTaille() {
 		return listeCds.size();
+
+
+
+
 	}
 
+
+
 	// TODO  ajouter une methode de tri
+
 
 }
